@@ -13,25 +13,26 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Console Program Reference
+				Konsol Programları Referansı
 			</h1>
 			<p>
-				Written by Danielle Kain, Kevin Miller
+				Yazanlar Danielle Kain ve Kevin Miller
 			</p>
 		</div>
 		<hr/>
+		
+		Konsol Programları (Console Program), program ile kullancısı arasında etkileşim sağlar. Bir konsol programı yazmak için ConsoleProgram sınıfını extend edin:
 
-		Console Programs allow for interaction between your program and the user. In order to write a program, make sure your program extends ConsoleProgram: 
 		<div class="well"><code><pre>
 public class Example extends ConsoleProgram {
 		</pre></code></div>
 		<br>
-		One cool thing that Console Programs let you do is get input from the user. Below are some examples:
+		Konsol programlarının güzel bir özelliği kullanıcıdan girdi(input) almanıza imkan sağlamalarıdır. Aşağıda birkaç örnek görebilirsiniz:
 		<div class="well"><code><pre>
-readLine(String promptMessage); //Reads a String from the user and return it
-readInt(String promptMessage); //Reads an int from the user and return it
-readDouble(String promptMessage); //Reads a double from the user and return it
-println(String printMessage); //Prints a message to the Console
+readLine(String promptMessage); //Kullanıcıdan bir String alın ve onu döndürün
+readInt(String promptMessage); //Kullanıcıdan bir int alın ve onu döndürün
+readDouble(String promptMessage); //Kullanıcıdan bir double alın ve onu döndürün
+println(String printMessage); //Konsola bir mesaj yazın.
 		</pre></code></div>		
 		%include templates/parts/footer.html
 
