@@ -1,6 +1,6 @@
 from plugins.bottle.bottle import SimpleTemplate
 
-import os.path
+import os.path 
 
 IGNORE_DIRS = [
     'parts'
