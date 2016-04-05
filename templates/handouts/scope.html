@@ -15,10 +15,10 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Variable Scope
+				Değişkenlerin Kapsamı
 			</h1>
 			<p>
-				Written by Chris Piech and Mehran Sahami
+				Yazanlar Chris Piech ve Mehran Sahami
 			</p>
 
 		</div>
@@ -26,18 +26,18 @@
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Local Variables</h2>
+				<h3>Local Variable'lar (Yerel Değişkenler)</h3>
 				<p>
-					Local variables are created local to the method (or the block...see "Block Scope" section below) in which they are defined. They are destroyed when execution of the method has been completed. Local variables can only be accessed from within the method in which they are declared.  Because of their transient nature, local variables cannot store persistent information about an object between method calls.
+					Local variable'lar içinde yazıldıkları metod (veya bloklar, fazlası için aşağıdaki "Blok Kapsamı" bölümüne bakın) için yaratılır. Metodun yürütmesi bittiğinde de yok edilirler. Local variable'lar sadece içinde yazıldıkları metodda kullanılabilirler. Bu geçici özelliklerinden ötürü local variable'lar birden fazla metodda kullanılması gereken kalıcı bilgileri saklamak için kullanılmazlar.
 				</p>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Local Variables Example</h2>
+				<h3>Local Variable Örnekleri</h3>
 				<p>
-					Consider, for example, the following snippet of code.
+					Mesela aşağıdaki kod parçasına bakın.
 				</p>
 				<pre id="editor" style="height:200px">public class AnExample extends ConsoleProgram {
 
@@ -47,78 +47,79 @@
  	}
 
 	public void methodTwo {
-		int b = a;  // BUG!: cannot refer to variable a in methodOne
+		int b = a;  // BUG!: methodOne'da yazılmış local variable a methodTwo'da kullanılamaz.
 		println("b = " + b);
 	}
 }</pre>
 				<p>
-					The variables a and b are local variables declared within different methods in the class AnExample. Because these variables are local variables, a can only be referred to within methodOne and variable b can only be accessed within methodTwo. Our attempt to initialize b using the value of a is illegal, as code in methodTwo cannot access local variables from methodOne or any other method.
+					a ve b variable'ları, AnExample class'ı içerisindeki farklı metodların içinde yazılmış local variable'lar. Bu variable'lar local variable'lar oldukları için a sadece methodOne'da, b ise sadece methodTwo'da erişilebilir. b variable'ını a'nın değerini kullanarak yaratmamız çalışmıyor çünkü methodTwo'da yazılan bu kod methodOne ya da başka herhangi bir method'daki local variable'ları kullanamaz.
 				</p>
 				<p>
-				Because local variable values do not persist after their containing method has completed, the variable a will be destroyed when methodOne has completed execution. The next time methodOne is called, a new variable a will be created.
+				Local variable'ların değerleri içinde oldukları metodun yürütmesi bittikten sonra saklanmadığı için, methodOne'ın yürütmesi bittikten sonra a variable'ı yok olacak. methodOne tekrar yürütüldüğünde ise sıfırdan yeni bir a variable'ı yaratılacak.
 			</p>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Block Scope</h2>
+				<h3>Blok Kapsamı</h3>
 				<p>
-					While we typically think of local variables as local to a particular method, in Java local variables are actually local to a block of code. While a method defines a block of code (since the opening and closing braces of the method define a block), for and while loops, if-statements, and other constructs are also considered blocks of code. If we declare a local variable inside one of these constructs, the local variable will be created when it is declared in the block and destroyed when the block ends execution.</p>
-				<p>Consider the following example:</p>
+					Genelde local variable'ları belli bir metoda ait olarak düşünürüz, ancak aslında Java'da local variable'lar belli bir kod bloğuna aittir. Metodlar sadece bir çeşit kod bloğudur. Java'da kodun etrafına konan süslü parantezler ("{" ve "}") bir kod bloğu belirler. Mesela bir metodun başına ve sonuna konan süslü parantezler onu bir kod bloğu yapar. Ama aynısı for ve while döngüleri ve if kalıpları da kod bloklarıdır (etraflarında süslü parantez olduğu için). Java'da etrafında süslü parantez olan tüm kod grupları bir kod bloğudur.
+					Ne zaman bir süslü parantez çiftinin içinde bir variable yaratsak, o variable o kod bloğuna ait bir local variable olur ve ancak o blok içerisinde kullanılabilir. Ne zaman o kod bloğunun yürütmesi biterse o zaman da yok edilir.</p>
+				<p>Aşağıdaki örneğe bakın:</p>
 				<pre id="editor2" style="height:400px">public class AnExample extends ConsoleProgram {
 	
 	public void methodThree {
 		int a = 4;
 
  	 	for (int i = 0; i &lt; 5; i++) {
-			int b = a; // this is okay
+			int b = a; // burada sorun yok
 
-			if (a > b) { // okay to access a and b here
+			if (a > b) { // a ve b burada da kullanılabilir
 				int c = 3;
 
-				println(i); // okay to access i here
-				println(b); // okay to access b here
-				println(c); // okay to access c here
+				println(i); // i burada da kullanılabilir
+				println(b); // b burada da kullanılabilir
+				println(c); // c burada da kullanılabilir
 			}
 
-			println(c); // illegal: c is no longer in scope here
+			println(c); // bozuk! : c artık burada kapsam içinde değil
 		}
 
-		println(a); // okay to access a here
-		println(b); // illegal: b is only in scope in body of for loop
-		println(i); // illegal: i is only in scope in body of for loop
+		println(a); // a burada kullanılabilir
+		println(b); // bozuk! : b sadece for döngüsünün içinde kullanılabilir
+		println(i); // bozuk! : i sadece for döngüsünün içinde kullanılabilir
 	}
 }</pre>
 				<p>
-					The variable a is local to methodThree, so accessing a within the for loop, or in the println is fine.  The variables i and b are only in scope (i.e., "alive") within the confines of the for loop in which they are declared.  They are no longer available by the time the last two printlns try to access them.  The variable c is only in scope within the confines of the if statement body in which it is declared.  Note that a new copy of c will get created each time the if statement body is executed, therefore it cannot be used to store values across iterations of the for loop.
+					a variable'ı methodThree'ye ait bir local variable, dolayısıyla hem for döngüsünün hem de println'nin içinde kullanılabilir. i ve b variable'ları ise sadece içinde yazıldıkları for loop'un içerisinde kapsam içindeler. Sondaki iki println yürütüldüğü zaman artık erişilebilir değiller. c variable'ı ise sadece içinde yazıldığı if kalıbının içinde kullanılabilir. Unutmayın ki for döngüsünün her bir döngüsünde if kalıbı baştan yürütüldüğü için c variable'ı da baştan yaratılıyor, dolayısıyla c variable'ı for'un farklı döngüleri arasında veri saklamaya uygun değil.
 				</p>
 			</div>
 		</div>
 		<!--<div class="row">
 			<div class="col-md-12">
-				<h2>Instance Variables</h2>
+				<h3>Instance Variables</h3>
 				<p>More coming...</p>
 			</div>
 		</div>-->
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Constants</h2>
+				<h3>Constant'lar (Sabitler)</h3>
 				<p>
-					we will sometimes find it useful to define a "variable" whose value does not change during the entire program. Such a variable is called a constant. In this case, the constant does not fulfill the traditional purpose of a variable (i.e., storing a temporary program value).  To declare a variable as a constant, use the keyword final when declaring the variable. Virtually all constants are declared outside all method calls so that their scope is the entire program. 
+					Kimi zaman program çalıştığı süre boyunca değeri hiç değişmeyecek olan bir variable yaratmak isteyebiliriz. Böyle variable'lara "constant" denir. Constant'lar normalde variable'ların kullanıldığı durumlarda kullanılmaz (mesela geçici bir değeri saklamak). Bir variable'ı constant olarak yaratmak için variable'ı ilk yazarken başına "final" kelimesini ekleyin. Constant'lar tüm metodların dışında yazılır, dolayısıyla kapsamları bütün programdır.
 				</p>
-				<p> Constants are usually written in all upper case letters to show that they do not change. The key-words private static final, which we include for good practice, are important when you write larger programs.
+				<p> Constant'lar genellikle büyük harflerle yazılır. Bunun amacı onların constant olduğunu ve hiç değişmeyeceklerini belirtmektir. "private static final" kelimelerini ise iyi bir kodlama alışkanlığı olarak ekleriz. Bu kelimeler özellikle daha büyük programlar yazdığınızda önemli olacaktır.
 				<p>
-					Consider this example:
+					Aşağıdaki örneğe bakın:
 				</p>
 				<pre id="editor3" style="height:180px">public class AnExample extends ConsoleProgram {
 	
-	private static final GRAVITY_ACCELERATION = 9.8;
+	private static final YERCEKIMI_IVMESI = 9.8;
 
 	public void run() {
-		double initialVelocity = 0;
-		double newVelocity = intialVelocity + GRAVITY_ACCELERATION;
-		println("velocity after 1 s: " + newVelocity);
+		double baslangicHizi = 0;
+		double yeniHiz = baslangicHizi + YERCEKIMI_IVMESI;
+		println("1 s sonraki hız: " + yeniHiz);
 	}
 }</pre>
 			</div>
