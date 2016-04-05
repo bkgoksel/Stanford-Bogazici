@@ -23,15 +23,15 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Ancient Game of Nimm
+				Nimm
 			</h1>
 			<p>
-				Problem written by Danielle Kain and Chris Piech.
+				Problemi yazanlar: Danielle Kain ve Chris Piech.
 			</p>
 			<p>
-				Worked Examples: 
+				Çalışan Örnekler: 
 				<a href="{{pathToRoot}}projects/emc2.html">E=MC2</a>,
-				<a href="{{pathToRoot}}projects/fibb.html">Fibbonacci</a>
+				<a href="{{pathToRoot}}projects/fibb.html">Fibonacci</a>
 			</p>
 
 		</div>
@@ -40,28 +40,28 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Nimm is an ancient game of strategy that is named after the old German word for "take." It is also called Tiouk Tiouk in West Africa and Tsynshidzi in China. Players alternate taking stones until there is zero left. The game of Nimm goes as follows:
+					Nimm antik bir strateji oyunudur. "almak" kelimesinin karşılığı olan eski bir Almanca kelimeden ismini almıştır. Batı Afrika'da Tiouk Tiouk ve Çin'de Tsynshidzi olarak bilinir. Oyuncular taş kalmayana kadar sırayla taşları alırlar. Nimm oyunu aşağıdaki gibi ilerler:
 <ol>
-<li>The game starts with a pile of 20 stones between the players</li>
-<li>The two players alternate turns</li>
-<li>On a given turn, a player may take either 1 or 2 stone from the center pile</li>
-<li>The two players continue until the center pile has run out of stones.</li>
+<li>Oyun oyuncular arasında duran 20 taşlık bir yığınla başlar</li>
+<li>İki oyuncu sırasıyla oynar</li>
+<li>Her elde, bir oyuncu ortadaki yığından 1 ya da 2 taş alabilir</li>
+<li>İki oyuncu ortada taş kalmayana kadar devam eder.</li>
 </ol>
-The last player to take a stone loses. Here is a screen shot from an example execution:
+Son taşı alan oyuncu kaybeder. Örnek bir programın ekran görüntüsünü burada görebilirsiniz:
 					<center>
 						<img style="width:500px" src="{{pathToRoot}}img/projects/nimm/nimm.png">	
 						<p style="text-align:center"><!--<i>Unique, unpredictable numbers for medicines.</i>--></p>
 					</center>
 				</p>
 
-				<p>Write a program to play Nimm. To make your life easier we have broken the problem down into smaller milestones. You have a lot of time for this program. Take it slowly, piece by piece.</p>
+				<p>Nimm oynamak için bir program yazın. İşinizi kolaylaştırmak için problemi daha küçük parçalara böldük. Bu program için çok fazla zamanınız var. Yavaşça, parça parça yapın.</p>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Milestone 1</h2>
-				<p>Start with 20 stones. Repeat the process of removing stones and printing out how many stones are left until there are less than zero. Don't worry about whose turn it is. Don't worry about making sure only one or two stones are removed. Use the method <code>readInt(<i>msg</i>)</code> which prints msg and waits for the user to enter a number. 
+				<h2>Aşama 1</h2>
+				<p>20 taşla başlayın. Sıfırdan az taş kalana kadar taşları yığından çıkarmaya ve kaç tane taş kaldığını göstermeye tekrar edin. Kimin sırası olduğu konusunda endişelenmeyin. Sadece bir veya iki tane taşın çıkarıldığına emin olmaya da çalışmayın. msg'yi yazdıran ve kullanıcının bir sayı girmesi için bekleyen <code>readInt(<i>msg</i>)</code> metodunu kullanın.
 				</p>
 
 
@@ -75,8 +75,8 @@ The last player to take a stone loses. Here is a screen shot from an example exe
 		
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Milestone 2</h2>
-				<p>Create a variable of type <code>int</code> to keep track of whose turn it is (remember there are two players). Tell the user whose turn it is. Each time someone picks up stones, change the player number.</p>
+				<h2>Aşama 2</h2>
+				<p>Kimin sırası olduğunu takip etmek için <code>int</code> tipinde bir değişken oluşturun (iki oyuncu olduğunu unutmayın). Kullanıcıya kimin sırası olduğunu söyleyin. Birisi taş aldığı her zaman, oyuncu numarasını değiştirin.</p>
 
 				<center>
 						<img style="width:500px" src="{{pathToRoot}}img/projects/nimm/nimm_m2.png">	
@@ -87,8 +87,8 @@ The last player to take a stone loses. Here is a screen shot from an example exe
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Milestone 3</h2>
-				<p>Make sure that each turn only one or two stones are removed. After you read a number of stones to remove from a user (their input), you can use the following pattern to check if it was valid and keep asking until it is valid.</p>
+				<h2>Aşama 3</h2>
+				<p>Her elde sadece bir veya iki taşın çıkarıldığına emin olun. Bir kullanıcıdan (onun girdisinden) çıkarılacak taş miktarını okuduktan sonra, geçerli olup olmadığını kontrol etmek ve geçerli olana kadar sormaya devam etmek için aşağıdaki kalıbı kullanabilirsiniz.</p>
 				<div class="well"><code>
 				while(<i>input is invalid</i>) {<br/>
 					&nbsp;&nbsp;&nbsp;<i>input</i> = readInt("Please enter 1 or 2: ");<br/>
@@ -101,24 +101,24 @@ The last player to take a stone loses. Here is a screen shot from an example exe
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Milestone 4</h2>
-				<p>Announce the winner.</p>
+				<h2>Aşama 4</h2>
+				<p>Kazananı ilan edin.</p>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Extensions</h2>
-				<p>Can you write an AI opponent? You can start with a dummy AI that always plays a random number. Then try to make one that plays intelligently...</p>
+				<h2>Eklentiler</h2>
+				<p>Rakip olarak bir yapay zeka (YZ) yazabilir misiniz? Sürekli olarak rastgele bir sayı söyleyerek oynayan işlevsiz bir YZ ile başlayabilirsiniz. Sonrasında zekice oynayan bir tane yapmayı deneyebilirsiniz...</p>
 
-				<p>Some other extension ideas:</p>
+				<p>Bazı diğer geliştirme fikirleri:</p>
 				<ul>
-					<li>Make sure that if there is only one stick left, the last player may only remove one stone</li>
-					<li>Give the user the option for the winner to be the player that doesn’t take the last stone, or the player that does take the last stone.</li>
-					<li>Expand the game to let players take 1, 2, or 3, sticks per turn.</li>
-					<li>Divisible by 3 rule: if the number of sticks remaining at the end of a player’s turn is divisible by 3, they must go again.</li>
-					<li>Give the user the option to play against the computer and design a process for the computer to choose how many sticks to remove.</li>
-					<li>Come up with your own extension.</li>
+					<li>Sadece bir parça kaldığında, son oyuncunun tek bir taş kaldırabildiğinden emin olun</li>
+					<li>Kullanıcıya kazananın son taşı alan oyuncu mu yoksa almayan oyuncu mu olacağını seçme şansını verin.</li>
+					<li>Oyuncuların her elde 1, 2 veya 3 taş alabileceği bir şekilde oyunu genişletin.</li>
+					<li>3'e bölünme kuralı: eğer bir oyuncunun sırasının sonunda kalan parça sayısı 3'e tam bölünüyorsa, tekrar oynamalılar.</li>
+					<li>Kullanıcıya bilgisayara karşı oynama seçeneği ver ve bilgisayar için kaç taş alacağına karar vermesi için bir yöntem tasarla.</li>
+					<li>Kendi fikirlerini bul.</li>
 			</div>
 		</div>
 
