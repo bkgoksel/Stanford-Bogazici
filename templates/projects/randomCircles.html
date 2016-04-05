@@ -15,17 +15,17 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Random Circles
+				Tesadüfi Daireler
 			</h1>
 			<p>
-				Based on a handout by Eric Roberts
+				Eric Roberts'ın ders notları temel alınmıştır.
 			</p>
 			<p>
-				Handouts:
-				<a href ="{{pathToRoot}}handouts/graphics.html">Graphics Reference</a>
+				Ders Notları:
+				<a href ="{{pathToRoot}}handouts/graphics.html">Grafik Referansı</a>
 				<br/>
-				Worked Example: 
-				<a href="{{pathToRoot}}projects/8Ball.html">8Ball</a>
+				Çalışan Örnek: 
+				<a href="{{pathToRoot}}projects/8Ball.html">8 Top</a>
 			</p>
 
 		</div>
@@ -34,7 +34,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					Write a GraphicsProgram that draws a set of ten circles with different sizes, positions, and colors.  Each circle should have a randomly chosen color, a randomly chosen radius between 70 and 200 pixels, and a randomly chosen position on the canvas, subject to the condition that the entire circle must fit inside the canvas without extending past the edge.  The following sample run shows one possible outcome:
+					Farklı boyutlarda, konumlarda ve renklerde on daire çizen bir GraphicsProgram'ı yazınız.  Her bir dairenin rastgele seçilmiş bir rengi, 70 ile 200 piksel arasından rastgele seçilmiş yarıçapı, ve kanvas üzerinde rastgele seçilmiş bir pozisyonu olmalı. Seçilen bu pozisyona göre dairenin tamamı kenarlardan taşmayacak şekilde kanvasın içine sığmalı.  Programın aşağıdaki örnek çalışması olası sonuçlardan birini gösteriyor:
 				</p>
 				<p>
 					<center>
@@ -42,20 +42,20 @@
 					</center>
 				</p>
 				<p>
-					On some runs of this program you might not see ten circles.  Why?
+					Programı her çalıştırışınızda on daire görmeyebilirsiniz. Sizce neden?
 				</p>
 
-				<p>To generate random numbers create a RandomGenerator instance variable (a variable declared outside all methods) like so:
+				<p>Rastgele sayılar üretmek için,  şu şekilde bir RandomGenerator örnek değişkeni (tüm metotların dışında tanımlanmış) yaratın :
 					<div class="well"><code>private RandomGenerator rgen = new RandomGenerator();</code></div>
 				</p>
-				<p>You can then use the variable to generate random numbers.
+				<p>Sonrasında rastgele sayılar üretmek için bu değişkeni kullanabilirsiniz.
 					<div class="well"><code>
-						rgen.nextInt(<i>min</i>, <i>max</i>)  //generates a random int in the range (min, max)
-						<br>rgen.nextColor() //generates a random Color
+						rgen.nextInt(<i>min</i>, <i>max</i>)  //(min, max) aralığında rastgele bir int üretir
+						<br>rgen.nextColor() //rastgele Color üretir
 					</code></div>
 				</p>
 				
-				<p>If you finish early, consider making random doughnuts.</p>
+				<p>Erken bitirirseniz, rastgele tatlı çörekler (doughnut) yapmayı düşünün.</p>
 			</div>
 
 		</div>
