@@ -1,3 +1,4 @@
+<!-- Translated-->
 <head>
 	%include templates/parts/head.html
 
@@ -13,25 +14,24 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Random Generator Reference
+				Rasgele Sayı Üreticisi (Random Generator) Referansı
 			</h1>
 			<p>
-				Written by Danielle Kain
+				Yazan Danielle Kain
 			</p>
 		</div>
 		<hr/>
-
-		Random Generators allow you to add randomness to your program. Regardless of what type of random object you want, you will first have to make a Random Generator: 
+		Rasgele Sayı Üreticileri programınıza rasgelelik eklemenizi sağlar. İstediğiniz rasgele değer ne cins olursa olsun önce onun için bir RandomGenerator eklemeniz gerekir: 
 		<div class="well"><code><pre>
 RandomGenerator rgen = new RandomGenerator();
 		</pre></code></div>
 		<br>
-		You can make many types of random objects using RandomGenerators. Here are some examples:
+		Her RandomGenerator pek çok farklı türde rasgele değer üretebilir. Mesela:
 		<div class="well"><code><pre>
-int randomInt = rgen.nextInt(); //Returns a random int
-double randomDouble = rgen.nextDouble(); //Returns a random double
-Color randomCol = rgen.nextColor(); //Returns a random color
-boolean randomBoolean = rgen.nextBoolean(); //Returns a random boolean
+int randomInt = rgen.nextInt(); // rasgele bir int
+double randomDouble = rgen.nextDouble(); //rasgele bir double
+Color randomCol = rgen.nextColor(); //rasgele bir renk
+boolean randomBoolean = rgen.nextBoolean(); //rasgele bir boolean
 		</pre></code></div>		
 		%include templates/parts/footer.html
 
