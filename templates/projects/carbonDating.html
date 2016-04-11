@@ -15,13 +15,13 @@
 		<!-- Header -->
 		<div id="pageHeader">
 			<h1>
-				Carbon Dating
+				Karbon Testi
 			</h1>
 			<p>
-				Problem written by Chris Piech
+				Yazan Chris Piech
 			</p>
 			<p>
-				Worked Examples: 
+				Çalışan Örnekler: 
 				<a href="{{pathToRoot}}projects/emc2.html">E=MC2</a>,
 				<a href="{{pathToRoot}}projects/fibb.html">Fibbonacci</a>
 			</p>
@@ -32,54 +32,55 @@
 		<div class="row">
 			<div class="col-md-12">
 				<p>
-					You probably have seen or read news stories about fascinating ancient artifacts. At an archaeological dig a piece of wooden tool is unearthed and the archaeologist finds it to be 5,000 years old.  A child mummy is found high in the Andes and the archaeologist says the child lived more than 2,000 years ago. Ever wondered how they know?
+					Büyük ihtimalle daha önce arkeolojik buluntularla ilgili haberler okudunuz. Belki eski bir gömü yerinde bulunan bir testinin 5.000 yaşında olduğu yazıldı, belki de 2.000 yıllık bir mumyanın bulunduğu. Peki arkeologlar buluntuların yaşını nereden öğreniyor?
 				</p>
-				<p>Carbon dating is a way of determining the age of certain archaeological artifacts of biological origin. Your job is to write a program that figures out how old a sample is.
+				<p>Karbo testi, ya da radyokarbon tarihleme yöntemi organik kökeni olan çeşitli arkeolojik buluntuların yaşını hesaplamanın bir yoludur. Sizin işiniz de bu şekilde buluntuların yaşını hesaplayan bir program yazmak.
 				</p>
 
 				<p>
 					<center>
 						<img style="width:500px" src="{{pathToRoot}}img/projects/carbonDating/real.jpg">	
-						<p style="text-align:center"><i>This is a real velociraptor fossil. It's very old.</i></p>
+						<p style="text-align:center"><i>Bu gerçek bir velociraptor fosil
+						. Çok eskiden kalma.</i></p>
 					</center>
 				</p>
 
-				<p>When an orgnanism is alive, its matter will have a constant amount of a special type of carbon called carbon-14 (c14). It turns out all living things have the same fraction: wood, mammoths, your body right now... small cats... all have the same amount.</p>
+				<p> Bir organizma hayattayken içinde bulunan maddelerin arasında sabit bir miktarda karbon-14 (c14) bulunur. Öyle ki c14 yaşayan her canlıda aynı miktarda vardır: ağaçlar, mamutlar, sizin vücudunuz ve İstanbul'un sokak kedileri... hepsinde aynı miktarda vardır.</p>
 				
 
-				<p>An important property of c14 is that it dissapears at a constant rate: every 5,700 years the amount of c14 is halfed (its half life is 5,700 years). For example, if one starts with 100% of the natural occurence of c14:
-				<p> &nbsp;&nbsp;&nbsp;&nbsp;In 5,700 years we expect there will only be 50% left. 
-				<br/> &nbsp;&nbsp;&nbsp;&nbsp;In 11,400 years we would expect there will only have 25% left. 
-				<br/> &nbsp;&nbsp;&nbsp;&nbsp;And so on...</p>
+				<p>Karbon-14'ün önemli bir diğer özelliği ise sabit bir oranda ortadan kayboluyor olmasıdır: her 5.700 yılda bir miktarı yarıya iner.(Yarı ömrü 5.700 yıldır) Örneğin %100 oranda c14 ile başlayan organik bir maddedde:
+				<p> &nbsp;&nbsp;&nbsp;&nbsp;5.700 yıl sonra %50 kalır
+				<br/> &nbsp;&nbsp;&nbsp;&nbsp;11.400 yıl sonra %25 kalır
+				<br/> &nbsp;&nbsp;&nbsp;&nbsp;Ve böyle sürüp gider...</p>
 
-				<p>When an organism is alive, it keeps replentishing its supply of c14 to the natural level. But when it dies (moment of silence), the amount of c14 starts to decrease. By testing how much c14 is left, scientists know how how long a dead thing has been dead for. Good times.</p>
+				<p>Bir organizma hayattayken c14 ortadan kayboldukça onu yeniler. Fakat öldüğü anda c14 miktarı düşmeye başlar. Bir kalıntının içinde ne kadar c14 kaldığına bakan bilim adamları o maddenin geldiği canlının ne zaman öldüğünü bulabilirler.</p>
 				
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Lookup Table</h2>
-				<p>To get started, lets make a lookup table that maps the percent of c14 remaining to the number of years the sample has been dead for. Print out the percent c14 remaining, and the number of years passed for the first 20 half lives. Your table should look like the following:</p>
+				<h2>Yıl-karbon tablosu</h2>
+				<p>Başlangıç olarak buluntuda kalan c14 miktarından kalıntının yaşını gösteren bir tablo yapalım. İlk 20 yarı ömür için kaç yıl geçtiğini ve kalan c14 miktarını print edin. Tablonuz aşağıdaki gibi görünmelidir:</p>
 				<p>
 					<center>
 						<img style="width:300px" src="{{pathToRoot}}img/projects/carbonDating/lookupTable.png">	
 					</center>
 				</p>
-				<p>Think about the variable type that you use to keep track of the amount of carbon left. What happens if you use an integer for percent?</p>
+				<p>Şimdi de kalan karbon miktarı için kullanabileceğiniz bir variable tipi düşünün. Eğer bir integer kullanırsanız ne olur?</p>
 			</div>
 		</div>
 
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Extension</h2>
-				<p>If you finish early, and have extra time, try this extension.</p>
-				<p>For scientists it will be much more useful for them to input the percent of natural c14 that they measured, and have the program tell them the age. Repeatedly ask the user to enter a percent of natural c14 remaining and then output the age of their sample.  </p>
+				<h2>Eklenti</h2>
+				<p>Erken bitirirseniz ve boş vaktiniz olursa aşağıdaki eklentiyi bir deneyin.</p>
+				<p>Eğer program yazılı girdi olarak c14 miktarını alıp kalıntının yaşını söylerse bu bilim adamları için çok daha kullanışlı olur. Kullanıcıya tekrar tekrar yüzde olarak kalan c14 miktarını girmesini söyleyin ve her girdiğinde kalıntının yaşını print edin.</p>
 				<p>
 					<center>
 						<img style="width:490px" src="{{pathToRoot}}img/projects/carbonDating/enter.png">	
 					</center>
 				</p>
-				<p>The formula for the age in years of a sample, given the percent of natural c14 remaining is:</p>
+				<p>c14 miktarına göre kalıntının yaşının formülü aşağıdaki gibidir:</p>
 				<p>
 					<br/>
 					<center>
@@ -88,17 +89,17 @@
 					<br/>
 				</p>
 
-				<p>To take the natural log of a number (the ln function) use the method:
+				<p>Bir sayının natürel logaritmasını almak için aşağıdaki metodu kullanın:
 					<div class="well"><code>Math.log(<i>value</i>)</code></div>
 				</p>	
 
-				<p>Overall, your program should look like the following</p>
+				<p>Genel olarak programınız aşağıdaki yapıya sahip olmalıdır:</p>
 				<p>
 					<center>
 						<img style="width:700px" src="{{pathToRoot}}img/projects/carbonDating/program.png">	
 					</center>
 				</p>
-				<p>All the best, and ask questions if you don't understand something (or want to know more about the archaeology)</p>
+				<p>Tabi en iyisi, herhangi bir sorunuz olursa, ya da karbon testi hakkında daha fazla bilgi almak isterseniz bize sorun!</p>
 			</div>
 		</div>
 		<!--<div class="row">
